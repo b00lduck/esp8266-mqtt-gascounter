@@ -58,10 +58,10 @@ void loop() {
     // if the state has changed, increment the counter
     if (gasState == LOW) {
       Serial.println("Publishing data..");
-      mqttClient.publish("energy/gas", "increment=0.1");
+      mqttClient.publish("energy", "gas_differential increment=0.1");
     }
     // Delay a little bit to avoid bouncing
-    delay(50);
+    delay(150);
   }
   // save the current state as the last state, for next time through the loop
   lastGasState = gasState;
